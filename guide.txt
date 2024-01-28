@@ -1,0 +1,27 @@
+- Tạo ModulesServiceProvider
+
+- Khai báo config->app.php
+
+-Thay đổi autoload trong composer.json
+
+  "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Modules\\" : "modules/"
+        },
+        "classmap": [
+            "database/seeders",
+            "database/migrations"
+        ]
+    },
+
+Tạo các modules dự án
+
+
+Tạo migration
+
+php artisan make:migration create_user_table --path=modules/User/migrations
+
+Tạo command
+
+php artisan make:command Module
